@@ -1,6 +1,7 @@
 //creating the canvas
 var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
+var clrbutton = document.getElementById("clr");
 
 //clearing the canvas
 var clearCanvas = function() {
@@ -16,11 +17,8 @@ var drawRect = function(d) {
 };
 
 //test calls
-var clear = document.getElementById("clearbutton");
-clear.addEventListener("click", clearCanvas);
-
 c.addEventListener("click", drawRect);
-
+clrbutton.addEventListener("click", clearCanvas);
 
 
 
