@@ -1,25 +1,25 @@
 //creating the canvas
 var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
-//ctx.fillstyle = "#ff0000";
-//ctx.fillRect(50, 50, 100, 200);
-
 
 //clearing the canvas
 var clearCanvas = function() {
     ctx.clearRect(0,0, c.width, c.height);
 };
-var clear = document.getElementById("clearbutton");
-clear.addEventListener("click", clearCanvas);
 
+//drawing a rectangle
 var drawRect = function(d) {
     var mouseX = d.offsetX;
     var mouseY = d.offsetY;
-    ctx.fillStyle = "#000000";
-    ctx.fillRect(mouseX-10,mouseY-10,20,20);
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(mouseX-10, mouseY-10, 30, 30);
 };
+
+//test calls
+var clear = document.getElementById("clearbutton");
+clear.addEventListener("click", clearCanvas);
+
 c.addEventListener("click", drawRect);
-//
 
 
 
