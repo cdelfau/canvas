@@ -11,25 +11,26 @@ var clearCanvas = function() {
 };
 
 //drawing a rectangle
-//var drawRect = function(d) {
-//    var x = d.offsetX;
-//    var y = d.offsetY;
-//    ctx.fillStyle = "#000000";
-//    ctx.fillRect(x-10, y-10, 10, 10);
-//};
+var drawRect = function(f) {
+    var x = f.offsetX;
+    var y = f.offsetY;
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(x-10, y-10, 10, 10);
+};
 
-//connecting the dots
+//creating the lines to connect the dots
+var begin = true;
+ctx.beginPath();
+ctx.moveTo(0, 0);
+
+//creating the dots to be connected
 var connect = function(f) {
-    var begin = true;
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineWidth= "1px";
     var x = f.offsetX;
     var y = f.offsetY;
     if (begin) {
 	ctx.moveTo(x, y)
 	begin = false;
-    }  
+    }
     ctx.arc(x, y, 5, 0, 2*Math.PI);
     ctx.lineTo(x, y);
     ctx.stroke();
